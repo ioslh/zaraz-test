@@ -19,13 +19,15 @@ export function trackEvent(
 
 export function trackPageView() {
   console.log(`[> page view]`);
-  const zaraz = (window as any).zaraz;
-  if (zaraz && zaraz.track) {
-    try {
+  try {
+    const zaraz = (window as any).zaraz;
+    if (zaraz && zaraz.spaPageview) {
       zaraz.spaPageview();
-    } catch (e) {
-      //
-      void e;
+      console.log("page view sent");
+    } else {
+      console.log("No spaPageview function");
     }
+  } catch (e) {
+    console.log("Failed send page view", e);
   }
 }
