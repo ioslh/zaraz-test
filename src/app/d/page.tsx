@@ -6,7 +6,7 @@ import { useEffect } from "react";
 export default function D() {
     useEffect(() => {
         window.setTimeout(() => {
-            trackEvent('enter_d')
+            trackEvent('page_view_d')
         }, 100)
     }, [])
     return <div>
