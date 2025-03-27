@@ -1,4 +1,5 @@
 'use client'
+import SendEvent from "@/components/send-event";
 import { trackEvent } from "@/utils/track";
 import Link from "next/link";
 import { useEffect } from "react";
@@ -12,5 +13,7 @@ export default function A() {
         <div>
             <Link href="/b">To B</Link>
         </div>
+        <hr />
+        <SendEvent eventName="button_click_a" />
     </div>
 }
