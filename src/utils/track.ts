@@ -16,3 +16,16 @@ export function trackEvent(
     console.log("zaraz track not found, fail to send: ", eventName);
   }
 }
+
+export function trackPageView() {
+  console.log(`[> page view]`);
+  const zaraz = (window as any).zaraz;
+  if (zaraz && zaraz.track) {
+    try {
+      zaraz.spaPageview();
+    } catch (e) {
+      //
+      void e;
+    }
+  }
+}
